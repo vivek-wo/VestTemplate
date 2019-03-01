@@ -10,16 +10,26 @@
 
     <style name="FullScreenTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!--<item name="android:windowBackground">@android:color/transparent</item>-->
-        <item name="android:navigationBarColor">@android:color/transparent</item>
-        <item name="android:statusBarColor">@android:color/transparent</item>
-        <item name="android:windowTranslucentNavigation">false</item>
+        <!--<item name="android:navigationBarColor">@android:color/transparent</item>-->
+        <!--<item name="android:statusBarColor">@android:color/transparent</item>-->
+        <item name="android:windowTranslucentNavigation">true</item>
         <item name="android:windowTranslucentStatus">true</item>
-        <item name="android:windowContentOverlay">@null</item>
+        <!--<item name="android:windowContentOverlay">@null</item>-->
         <item name="android:windowFullscreen">true</item>
     </style>
 
     <style name="FullScreenTheme.SplashImage">
+        <!--为true时，底部导航栏会出现闪烁现象-->
+        <item name="android:windowTranslucentNavigation">false</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
         <item name="android:windowBackground">@drawable/image_splash</item>
+    </style>
+
+    <style name="ActivityTheme" parent="AppTheme">
+        <!-- Customize your theme here. -->
+        <item name="android:windowTranslucentStatus">false</item>
+        <!--<item name="android:windowTranslucentNavigation">true</item>-->
+        <item name="android:statusBarColor">@android:color/transparent</item>
     </style>
 
 

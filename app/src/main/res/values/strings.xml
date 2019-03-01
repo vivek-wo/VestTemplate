@@ -1,6 +1,7 @@
 <resources>
-    <string name="app_name">VestTemplate</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="app_name">出彩</string>
+
+    <string name="navigation_home">双色球</string>
+    <string name="navigation_zodiac">十二宫</string>
+    <string name="navigation_mine">我的</string>
 </resources>
