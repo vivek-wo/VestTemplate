@@ -9,7 +9,7 @@ import com.vest.template.sample.zodiac.ZodiacFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), MainView {
     lateinit var mainPresenter: MainPresenter
     var homeFragment: HomeFragment? = null
     var zodiacFragment: ZodiacFragment? = null
@@ -45,11 +45,15 @@ class MainActivity : AppCompatActivity() {
         false
     }
 
+    override fun setPresenter(presenter: MainPresenter?) {
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
-        mainPresenter = MainPresenter();
+        mainPresenter = MainPresenter()
+        mainPresenter.takeView(this)
     }
 
 }
