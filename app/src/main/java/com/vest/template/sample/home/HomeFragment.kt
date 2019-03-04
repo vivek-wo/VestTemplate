@@ -9,6 +9,7 @@ import com.vest.template.sample.MainPresenter
 import com.vest.template.sample.R
 
 class HomeFragment : Fragment(), HomeView {
+    lateinit var homePresenter: HomePresenter
     override fun setPresenter(presenter: MainPresenter?) {
     }
 
@@ -19,5 +20,13 @@ class HomeFragment : Fragment(), HomeView {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+        homePresenter = HomePresenter()
+        homePresenter.takeView(this)
+        homePresenter.getData()
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        homePresenter.dropView()
     }
 }
