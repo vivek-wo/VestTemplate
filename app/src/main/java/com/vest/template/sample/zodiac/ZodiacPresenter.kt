@@ -19,6 +19,7 @@ class ZodiacPresenter(val context: Context) : BasePresenter<ZodiacView> {
             val jsonString = inputStream.bufferedReader().use { it.readText() }
             val turnsType = object : TypeToken<List<ZodiacData>>() {}.type
             val zodiacDataList = Gson().fromJson<List<ZodiacData>>(jsonString, turnsType)
+            zodiacView?.updateZodiacData(zodiacDataList)
         }.start()
     }
 

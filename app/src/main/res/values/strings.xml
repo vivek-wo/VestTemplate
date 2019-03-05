@@ -4,4 +4,10 @@
     <string name="navigation_home">双色球</string>
     <string name="navigation_zodiac">十二宫</string>
     <string name="navigation_mine">我的</string>
+
+    <string name="mine_default_text">请登录</string>
+
+    <string name="mine_setting_buy_text">我的购彩记录</string>
+    <string name="mine_setting_set_text">设置</string>
+    <string name="mine_setting_about_text">关于</string>
 </resources>
