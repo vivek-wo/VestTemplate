@@ -10,4 +10,6 @@
     <string name="mine_setting_buy_text">我的购彩记录</string>
     <string name="mine_setting_set_text">设置</string>
     <string name="mine_setting_about_text">关于</string>
+
+    <string name="home_lottery_title">开奖信息</string>
 </resources>

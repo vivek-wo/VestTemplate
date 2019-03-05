@@ -1,6 +1,5 @@
 package com.vest.template.sample.home
 
-import android.util.Log
 import com.vivek.wo.mvp.basemvp.BasePresenter
 import org.jsoup.Jsoup
 
@@ -12,12 +11,19 @@ class HomePresenter : BasePresenter<HomeView> {
     fun getData() {
         Thread {
             var document = Jsoup.connect(BASE_HTML).get()
-            val elements = document.select("table.kj_tablelist02")
-            val elsIssueNumber = elements.select("td.td_title01")
+            val element = document.select("table.kj_tablelist02").first()
+
+            val elsIssueNumber = element.select("td.td_title01")
             val issueNumber: String = elsIssueNumber.select("strong").text()
             val issueNumberDate: String = elsIssueNumber.select("span.span_right").text()
+            homeView?.updateLottery(issueNumber, issueNumberDate)
 
-            Log.e("----", "双色球第${issueNumber}期,$issueNumberDate")
+            val elementLotteryNumbers = element.select("div.ball_box01").select("li")
+            val lotteryNumberArray = arrayOfNulls<String>(7)
+            for ((index, element) in elementLotteryNumbers.withIndex()) {
+                lotteryNumberArray[index] = element.text()
+            }
+            homeView?.updateLotteryNumber(lotteryNumberArray)
         }.start()
     }
 
