@@ -8,4 +8,6 @@ interface HomeView : BaseView<MainPresenter> {
     fun updateLottery(issueNumber: String, issueNumberDate: String)
 
     fun updateLotteryNumber(lotteryNumberArray: Array<String?>)
+
+    fun updatePreviousIssue(previousIssueText: String, previousIssueUrl: String)
 }

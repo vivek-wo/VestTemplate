@@ -54,6 +54,7 @@ class MainActivity : AppCompatActivity(), MainView {
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
         mainPresenter = MainPresenter()
         mainPresenter.takeView(this)
+        navigation.selectedItemId = R.id.navigation_home
     }
 
 }

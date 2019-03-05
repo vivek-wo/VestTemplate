@@ -28,6 +28,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:lines="2"
             android:textColor="@android:color/tertiary_text_light"
             android:layout_marginTop="5dp"
             app:layout_constraintTop_toBottomOf="@id/lotteryTypeText"/>
@@ -37,8 +39,18 @@
                   android:padding="10dp"
                   app:layout_constraintTop_toBottomOf="@id/lotteryTypeDateText"
                   android:orientation="horizontal">
-
     </LinearLayout>
 
+    <Button
+            android:id="@+id/lotteryPreviousIssueTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            app:layout_constraintTop_toBottomOf="@id/lotteryNumberLayout"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:textColor="@android:color/tertiary_text_light"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="15dp"
+    />
 
 </android.support.constraint.ConstraintLayout>

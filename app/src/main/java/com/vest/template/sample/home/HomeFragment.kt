@@ -13,6 +13,8 @@ import com.vest.template.sample.MainPresenter
 import com.vest.template.sample.R
 import kotlinx.android.synthetic.main.fragment_home.*
 
+val BASE_HTML = "https://kaijiang.500.com/ssq.shtml"
+
 class HomeFragment : Fragment(), HomeView {
     lateinit var homePresenter: HomePresenter
     override fun setPresenter(presenter: MainPresenter?) {
@@ -27,11 +29,11 @@ class HomeFragment : Fragment(), HomeView {
         super.onActivityCreated(savedInstanceState)
         homePresenter = HomePresenter()
         homePresenter.takeView(this)
-        homePresenter.getData()
+        homePresenter.getData(BASE_HTML)
     }
 
     override fun updateLottery(issueNumber: String, issueNumberDate: String) {
-        activity!!.runOnUiThread {
+        activity?.runOnUiThread {
             var issueNumberString = "双色球第 <font color='#FF0000'>$issueNumber</font> 期"
             lotteryTypeText.text = Html.fromHtml(issueNumberString)
             lotteryTypeDateText.text = issueNumberDate
@@ -39,13 +41,25 @@ class HomeFragment : Fragment(), HomeView {
     }
 
     override fun updateLotteryNumber(lotteryNumberArray: Array<String?>) {
-        activity!!.runOnUiThread {
+        activity?.runOnUiThread {
+            lotteryNumberLayout.removeAllViews()
             for ((index, number) in lotteryNumberArray.withIndex()) {
                 var colorRes = R.drawable.ic_shape_red_circle
                 if (index == lotteryNumberArray.size - 1) {
                     colorRes = R.drawable.ic_shape_blue_circle
                 }
                 lotteryNumberLayout.addView(createTextView(number, colorRes))
+            }
+        }
+    }
+
+    override fun updatePreviousIssue(previousIssueText: String, previousIssueUrl: String) {
+        activity?.runOnUiThread {
+            lotteryPreviousIssueTextView.text = "上一期：$previousIssueText"
+            lotteryPreviousIssueTextView.tag = previousIssueUrl
+            lotteryPreviousIssueTextView.setOnClickListener {
+                val tag = it.tag as String
+                homePresenter.getData(tag)
             }
         }
     }
