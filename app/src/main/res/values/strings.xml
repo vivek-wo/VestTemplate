@@ -1,6 +1,7 @@
 <resources>
-    <string name="app_name">出彩</string>
+    <string name="app_name">玄理彩票</string>
 
+    <string name="app_name_desc">玄理彩票 - 玄理、命理分析</string>
     <string name="navigation_home">双色球</string>
     <string name="navigation_zodiac">十二宫</string>
     <string name="navigation_mine">我的</string>

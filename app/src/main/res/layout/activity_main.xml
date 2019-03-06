@@ -6,6 +6,15 @@
                                              android:layout_width="match_parent"
                                              android:layout_height="match_parent"
                                              tools:context=".MainActivity">
+    <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:background="?attr/colorPrimary"
+            android:minHeight="?android:attr/actionBarSize"
+            app:titleTextColor="@android:color/white"
+            app:layout_constraintTop_toTopOf="parent">
+    </android.support.v7.widget.Toolbar>
 
     <FrameLayout
             android:id="@+id/fragmentContainer"
@@ -14,7 +23,8 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintBottom_toTopOf="@+id/navigation"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toBottomOf="@id/toolbar"
+    />
 
     <android.support.design.widget.BottomNavigationView
             android:id="@+id/navigation"
