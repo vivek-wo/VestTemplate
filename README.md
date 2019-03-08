@@ -3,8 +3,7 @@
 
 ### 项目开发概述
 1. 基于简单的MVP模式实现
-
- MVP基础项目可参考：[ProjectMVP](https://github.com/vivek-wo/ProjectMVP)
+MVP基础项目可参考：[ProjectMVP](https://github.com/vivek-wo/ProjectMVP)
 
 2. 启动页面的思考
 涉及Android冷启动和热启动知识，实现启动白屏或者黑屏的优化。
