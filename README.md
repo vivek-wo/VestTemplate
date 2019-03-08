@@ -4,11 +4,11 @@
 ### 项目开发概述
 1. 基于简单的MVP模式实现
 
-  MVP基础项目可参考：[ProjectMVP](https://github.com/vivek-wo/ProjectMVP)
+    MVP基础项目可参考：[ProjectMVP](https://github.com/vivek-wo/ProjectMVP)
 
 2. 启动页面的思考
 
-  涉及Android冷启动和热启动知识，实现启动白屏或者黑屏的优化。
+    涉及Android冷启动和热启动知识，实现启动白屏或者黑屏的优化。
   
 * 设置窗体背景为透明
 
@@ -22,11 +22,11 @@
 
 3. 引导页的实现
 
-  通过ViewPager实现引导功能页，圆形指示器设计为LinearLayout直接动态设置。
+    通过ViewPager实现引导功能页，圆形指示器设计为LinearLayout直接动态设置。
 
 4. 数据爬取
 
-  通过JSoup实现数据爬取功能。掌握数据爬取方法。
+    通过JSoup实现数据爬取功能。掌握数据爬取方法。
 
 5. Design包`NestedScrollView`的简单实现
 6. 基于GIMP的矢量图制作
