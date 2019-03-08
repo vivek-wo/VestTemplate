@@ -10,15 +10,15 @@
 
     涉及Android冷启动和热启动知识，实现启动白屏或者黑屏的优化。
   
-* 设置窗体背景为透明
+  * 设置窗体背景为透明
 
-  更改Activity Theme `windowBackground`为透明。
+    更改Activity Theme `windowBackground`为透明。
 
-* 设置Activity Theme `windowBackground` 为背景图。
+  * 设置Activity Theme `windowBackground` 为背景图。
 
-  背景图会一直占用内存资源，应使用 **.9** 图，然后在资源布局中再次布置界面或者实现动画功能。
+    背景图会一直占用内存资源，应使用 **.9** 图，然后在资源布局中再次布置界面或者实现动画功能。
 
-  启动页涉及底部导航，应直接选择隐藏，如设置Theme `windowTranslucentNavigation`为**true**，则会导致底部导航闪烁问题。
+    启动页涉及底部导航，应直接选择隐藏，如设置Theme `windowTranslucentNavigation`为**true**，则会导致底部导航闪烁问题。
 
 3. 引导页的实现
 
