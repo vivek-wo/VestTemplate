@@ -33,7 +33,7 @@ class SportsFragment : Fragment(), SportsView {
 
     override fun updateLottery(issueNumber: String, issueNumberDate: String) {
         activity?.runOnUiThread {
-            var issueNumberString = "双色球第 <font color='#FF0000'>$issueNumber</font> 期"
+            var issueNumberString = "超级大乐透第 <font color='#FF0000'>$issueNumber</font> 期"
             lotteryTypeText.text = Html.fromHtml(issueNumberString)
             lotteryTypeDateText.text = issueNumberDate
         }
@@ -44,7 +44,7 @@ class SportsFragment : Fragment(), SportsView {
             lotteryNumberLayout.removeAllViews()
             for ((index, number) in lotteryNumberArray.withIndex()) {
                 var colorRes = R.drawable.ic_shape_red_circle
-                if (index == lotteryNumberArray.size - 1) {
+                if (index >= lotteryNumberArray.size - 2) {
                     colorRes = R.drawable.ic_shape_blue_circle
                 }
                 lotteryNumberLayout.addView(createTextView(number, colorRes))
@@ -58,6 +58,7 @@ class SportsFragment : Fragment(), SportsView {
             lotteryPreviousIssueTextView.tag = previousIssueUrl
             lotteryPreviousIssueTextView.setOnClickListener {
                 val tag = it.tag as String
+                //http://kaijiang.500.com/shtml/dlt/19025.shtml
                 sportsPresenter.getData(tag)
             }
         }

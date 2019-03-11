@@ -28,15 +28,10 @@ class SportsPresenter : BasePresenter<SportsView> {
                 }
                 sportsView?.updateLotteryNumber(lotteryNumberArray)
 
-                if (elements.size > 1) {
-                    val elementPreviousIssue = elements[1].select("a").first()
-                    val previousIssueText = elementPreviousIssue.text()
-                    var previousIssueUrl = elementPreviousIssue.attr("href")
-                    if (!previousIssueUrl.contains("http:")) {
-                        previousIssueUrl = "http:$previousIssueUrl"
-                    }
-                    sportsView?.updatePreviousIssue(previousIssueText, previousIssueUrl)
-                }
+                val previousIssueNumber = document.select("a.iSelect").first().text().toInt() - 1
+                var previousIssueText = "超级大乐透${previousIssueNumber}开奖结果"
+                var previousIssueUrl = "http://kaijiang.500.com/shtml/dlt/${previousIssueNumber}.shtml"
+                sportsView?.updatePreviousIssue(previousIssueText, previousIssueUrl)
             } catch (exception: IOException) {
                 exception.printStackTrace()
             }
