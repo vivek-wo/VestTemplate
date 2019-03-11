@@ -1,11 +1,11 @@
-package com.vest.template.sample.home
+package com.vest.template.sample.welfare
 
 import com.vivek.wo.mvp.basemvp.BasePresenter
 import org.jsoup.Jsoup
 import java.io.IOException
 
-class HomePresenter : BasePresenter<HomeView> {
-    var homeView: HomeView? = null
+class WelfarePresenter : BasePresenter<WelfareView> {
+    var welfareView: WelfareView? = null
 
     fun getData(htmlUrl: String) {
         Thread {
@@ -17,14 +17,14 @@ class HomePresenter : BasePresenter<HomeView> {
                 val elsIssueNumber = elements.select("td.td_title01")
                 val issueNumber: String = elsIssueNumber.select("strong").text()
                 val issueNumberDate: String = elsIssueNumber.select("span.span_right").text()
-                homeView?.updateLottery(issueNumber, issueNumberDate)
+                welfareView?.updateLottery(issueNumber, issueNumberDate)
 
                 val elementLotteryNumbers = elements.select("div.ball_box01").select("li")
                 val lotteryNumberArray = arrayOfNulls<String>(7)
                 for ((index, element) in elementLotteryNumbers.withIndex()) {
                     lotteryNumberArray[index] = element.text()
                 }
-                homeView?.updateLotteryNumber(lotteryNumberArray)
+                welfareView?.updateLotteryNumber(lotteryNumberArray)
 
                 if (elements.size > 1) {
                     val elementPreviousIssue = elements[1].select("a").first()
@@ -33,7 +33,7 @@ class HomePresenter : BasePresenter<HomeView> {
                     if (!previousIssueUrl.contains("http:")) {
                         previousIssueUrl = "http:$previousIssueUrl"
                     }
-                    homeView?.updatePreviousIssue(previousIssueText, previousIssueUrl)
+                    welfareView?.updatePreviousIssue(previousIssueText, previousIssueUrl)
                 }
             } catch (exception: IOException) {
                 exception.printStackTrace()
@@ -41,11 +41,11 @@ class HomePresenter : BasePresenter<HomeView> {
         }.start()
     }
 
-    override fun takeView(view: HomeView?) {
-        homeView = view
+    override fun takeView(view: WelfareView?) {
+        welfareView = view
     }
 
     override fun dropView() {
-        homeView = null
+        welfareView = null
     }
 }

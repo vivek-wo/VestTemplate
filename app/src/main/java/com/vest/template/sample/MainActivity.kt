@@ -3,34 +3,34 @@ package com.vest.template.sample
 import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
 import android.support.v7.app.AppCompatActivity
-import com.vest.template.sample.home.HomeFragment
 import com.vest.template.sample.mine.MineFragment
-import com.vest.template.sample.zodiac.ZodiacFragment
+import com.vest.template.sample.sports.SportsFragment
+import com.vest.template.sample.welfare.WelfareFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
 
 class MainActivity : AppCompatActivity(), MainView {
     lateinit var mainPresenter: MainPresenter
-    var homeFragment: HomeFragment? = null
-    var zodiacFragment: ZodiacFragment? = null
+    var homeFragment: WelfareFragment? = null
+    var sportsFragment: SportsFragment? = null
     var mineFragment: MineFragment? = null
 
     private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
             R.id.navigation_home -> {
                 if (homeFragment == null) {
-                    homeFragment = HomeFragment();
+                    homeFragment = WelfareFragment();
                 }
                 supportFragmentManager.beginTransaction()
                     .replace(R.id.fragmentContainer, homeFragment!!).commit()
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_dashboard -> {
-                if (zodiacFragment == null) {
-                    zodiacFragment = ZodiacFragment();
+                if (sportsFragment == null) {
+                    sportsFragment = SportsFragment();
                 }
                 supportFragmentManager.beginTransaction()
-                    .replace(R.id.fragmentContainer, zodiacFragment!!).commit()
+                    .replace(R.id.fragmentContainer, sportsFragment!!).commit()
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_notifications -> {

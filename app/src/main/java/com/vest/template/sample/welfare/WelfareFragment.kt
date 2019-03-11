@@ -1,4 +1,4 @@
-package com.vest.template.sample.home
+package com.vest.template.sample.welfare
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
@@ -9,27 +9,25 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.TextView
-import com.vest.template.sample.MainPresenter
+import com.vest.template.sample.Constant
 import com.vest.template.sample.R
-import kotlinx.android.synthetic.main.fragment_home.*
+import kotlinx.android.synthetic.main.fragment_welfare.*
 
-val BASE_HTML = "https://kaijiang.500.com/ssq.shtml"
-
-class HomeFragment : Fragment(), HomeView {
-    lateinit var homePresenter: HomePresenter
-    override fun setPresenter(presenter: MainPresenter?) {
+class WelfareFragment : Fragment(), WelfareView {
+    lateinit var welfarePresenter: WelfarePresenter
+    override fun setPresenter(presenter: WelfarePresenter?) {
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val view = inflater.inflate(R.layout.fragment_home, null)
+        val view = inflater.inflate(R.layout.fragment_welfare, null)
         return view
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        homePresenter = HomePresenter()
-        homePresenter.takeView(this)
-        homePresenter.getData(BASE_HTML)
+        welfarePresenter = WelfarePresenter()
+        welfarePresenter.takeView(this)
+        welfarePresenter.getData(Constant.WELFARE_LOTTERY_BASEURL)
     }
 
     override fun updateLottery(issueNumber: String, issueNumberDate: String) {
@@ -59,7 +57,7 @@ class HomeFragment : Fragment(), HomeView {
             lotteryPreviousIssueTextView.tag = previousIssueUrl
             lotteryPreviousIssueTextView.setOnClickListener {
                 val tag = it.tag as String
-                homePresenter.getData(tag)
+                welfarePresenter.getData(tag)
             }
         }
     }
@@ -81,6 +79,6 @@ class HomeFragment : Fragment(), HomeView {
 
     override fun onDestroyView() {
         super.onDestroyView()
-        homePresenter.dropView()
+        welfarePresenter.dropView()
     }
 }

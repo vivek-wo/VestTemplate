@@ -1,4 +1,4 @@
-package com.vest.template.sample.zodiac
+package com.vest.template.sample.sports
 
 data class ZodiacData(
     var index: Int,

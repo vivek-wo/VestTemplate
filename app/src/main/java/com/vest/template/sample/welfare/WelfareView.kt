@@ -1,9 +1,8 @@
-package com.vest.template.sample.home
+package com.vest.template.sample.welfare
 
-import com.vest.template.sample.MainPresenter
 import com.vivek.wo.mvp.basemvp.BaseView
 
-interface HomeView : BaseView<MainPresenter> {
+interface WelfareView : BaseView<WelfarePresenter> {
 
     fun updateLottery(issueNumber: String, issueNumberDate: String)
 
