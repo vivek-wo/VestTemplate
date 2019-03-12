@@ -6,6 +6,7 @@
     <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
+            android:name="com.vest.template.VestApplication"
             android:allowBackup="true"
             android:icon="@mipmap/ic_launcher"
             android:label="@string/app_name"
@@ -14,7 +15,13 @@
             android:theme="@style/AppTheme">
         <activity
                 android:name=".MainActivity"
+                android:launchMode="singleTask"
                 android:label="@string/app_name_desc">
+            <intent-filter>
+                <action android:name="com.vest.template.sample.intent.NOTIFICATION_OPENED"/>
+                <category android:name="com.vest.template.sample"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
         </activity>
 
         <activity android:name="com.vest.template.SplashActivity"

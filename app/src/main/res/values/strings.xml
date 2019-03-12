@@ -1,14 +1,15 @@
 <resources>
     <string name="app_name">幸运彩票</string>
 
-    <string name="app_name_desc">幸运彩票 - 幸运购彩、智能分析</string>
+    <string name="app_name_desc">幸运彩票 - 幸运选号、智能分析</string>
     <string name="navigation_home">福利彩票</string>
     <string name="navigation_zodiac">体育彩票</string>
     <string name="navigation_mine">我的</string>
 
     <string name="mine_default_text">请登录</string>
 
-    <string name="mine_setting_buy_text">我的购彩记录</string>
+    <string name="mine_setting_buy_text">我的选号记录</string>
+    <string name="mine_setting_get_text">我的领取记录</string>
     <string name="mine_setting_set_text">设置</string>
     <string name="mine_setting_about_text">关于</string>
 

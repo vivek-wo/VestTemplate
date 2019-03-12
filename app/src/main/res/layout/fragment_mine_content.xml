@@ -21,7 +21,7 @@
 
             <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
                       android:layout_weight="1"
-                      android:textSize="20sp"
+                      android:textSize="18sp"
                       android:text="@string/mine_setting_buy_text"/>
 
         </LinearLayout>
@@ -34,7 +34,20 @@
 
             <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
                       android:layout_weight="1"
-                      android:textSize="20sp"
+                      android:textSize="18sp"
+                      android:text="@string/mine_setting_get_text"/>
+
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:orientation="horizontal"
+                      android:padding="10dp"
+                      android:gravity="center_vertical">
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:layout_weight="1"
+                      android:textSize="18sp"
                       android:text="@string/mine_setting_set_text"/>
 
         </LinearLayout>
@@ -47,7 +60,7 @@
 
             <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
                       android:layout_weight="1"
-                      android:textSize="20sp"
+                      android:textSize="18sp"
                       android:text="@string/mine_setting_about_text"/>
 
         </LinearLayout>

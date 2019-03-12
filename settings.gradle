@@ -1,1 +1,1 @@
-include ':app', ':basemvp'
+include ':app', ':basemvp', ':jpush'
