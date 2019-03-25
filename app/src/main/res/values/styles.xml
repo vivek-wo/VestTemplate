@@ -33,4 +33,8 @@
         <item name="android:statusBarColor">@android:color/transparent</item>
     </style>
 
+    <style name="ToolbarStyle">
+        <item name="colorControlNormal">@android:color/white</item>
+    </style>
+
 </resources>

@@ -14,4 +14,6 @@
     <string name="mine_setting_about_text">关于</string>
 
     <string name="home_lottery_title">开奖信息</string>
+
+    <string name="main_menu_action_cart">购物车</string>
 </resources>
